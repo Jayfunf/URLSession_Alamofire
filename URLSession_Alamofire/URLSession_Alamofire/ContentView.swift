@@ -8,11 +8,59 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var networking = networkingClass()
+    @ObservedObject var network = networkingClass()
+    
+    let gradient: LinearGradient = {
+        let colors: [Color] = [.orange, .pink, .purple, .red, .yellow, .cyan]
+            return LinearGradient(gradient: Gradient(colors: [colors.randomElement()!, colors.randomElement()!]), startPoint: .center, endPoint: .topTrailing)
+        }()
     
     var body: some View {
-        List() {
-            ListView(thumbnailImg: <#T##Image#>, name: <#T##String#>, email: <#T##String#>)
+        NavigationView {
+            VStack {
+                Image(systemName: "heart")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding()
+                    .cornerRadius(10)
+                Spacer()
+                Divider()
+                Text("Click Hear👇")
+                    .font(.system(size: 30))
+                    .foregroundColor(.white)
+                    .frame(width: 300, alignment: .leading)
+                    
+                VStack {
+                    Button {
+                        network.alamofireNetworking()
+                    } label: {
+                        NavigationLink("Alamofire"){
+                            AlamofireView()
+                        }
+                        .frame(width: 300)
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        
+                    }
+                    Button {
+                        network.urlSessionNetworking()
+                    } label: {
+                        NavigationLink("URLSession"){
+                            SessionView()
+                        }
+                        .frame(width: 300)
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                    }
+                }
+            }
+            .background(gradient)
         }
     }
 }

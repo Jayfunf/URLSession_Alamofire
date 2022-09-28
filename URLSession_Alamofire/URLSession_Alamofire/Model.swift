@@ -11,20 +11,23 @@ struct UserDatas: Codable {
     var results: [RandomUser]
 }
 
-struct RandomUser: Codable {
+struct RandomUser: Codable, Identifiable {
+    let id = UUID()
     let name: Name
     let email: String
-    let picture: Picture
     
     struct Name: Codable {
         var title: String
         var first: String
         var last: String
+        
+        var full: String {
+            return "\(self.title.capitalized).\(self.last.capitalized) \(self.first.capitalized)"
+        }
     }
     
-    struct Picture: Codable {
-        let large: String
-        let medium: String
-        let thumbnail: String
+    static func getDummy() -> Self {
+//        return RandomUser(name: Name.init(title: "MR", first: "Minhyun", last: "Cho"), email: "simh3077@gmail.com", picture: Picture(large: "https://randomuser.me/api/portraits/thumb/men/3.jpg", medium: "https://randomuser.me/api/portraits/thumb/men/3.jpg", thumbnail: "https://randomuser.me/api/portraits/thumb/men/3.jpg"))
+        return RandomUser(name: Name.init(title: "MR", first: "Minhyun", last: "Cho"), email: "simh3077@gmail.com")
     }
 }

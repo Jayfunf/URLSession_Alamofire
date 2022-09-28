@@ -8,24 +8,35 @@
 import SwiftUI
 
 struct ListView: View {
+    @ObservedObject var network = networkingClass()
+    var prdData: RandomUser
     
-    @State var thumbnailImg: Image
-    @State var name: String
-    @State var email: String
+    let gradient: LinearGradient = {
+        let colors: [Color] = [.orange, .pink, .purple, .red, .yellow, .blue, .cyan]
+            return LinearGradient(gradient: Gradient(colors: [colors.randomElement()!, colors.randomElement()!]), startPoint: .center, endPoint: .topTrailing)
+        }()
+    
+    init(_ prdData: RandomUser) {
+        self.prdData = prdData
+    }
     
     var body: some View {
         HStack {
-            thumbnailImg.padding()
+            Image(systemName: "heart")
+                .padding()
+                .background(gradient)
+                .cornerRadius(10)
             VStack(alignment: .leading){
-                Text("\(self.name)")
-                Text("\(self.email)")
+                Text("\(prdData.name.title). \(prdData.name.first)\(prdData.name.last)")
+                Text("\(prdData.email)")
             }
+            
         }
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(thumbnailImg: Image(systemName: "heart"), name: "Minion", email: "simh3077@gmail.com")
+        ListView(RandomUser.getDummy())
     }
 }
