@@ -25,7 +25,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                 Spacer()
                 Divider()
-                Text("Click Hear👇")
+                Text("Click Here👇")
                     .font(.system(size: 30))
                     .foregroundColor(.white)
                     .frame(width: 300, alignment: .leading)
