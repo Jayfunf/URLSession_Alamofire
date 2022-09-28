@@ -27,7 +27,6 @@ struct RandomUser: Codable, Identifiable {
     }
     
     static func getDummy() -> Self {
-//        return RandomUser(name: Name.init(title: "MR", first: "Minhyun", last: "Cho"), email: "simh3077@gmail.com", picture: Picture(large: "https://randomuser.me/api/portraits/thumb/men/3.jpg", medium: "https://randomuser.me/api/portraits/thumb/men/3.jpg", thumbnail: "https://randomuser.me/api/portraits/thumb/men/3.jpg"))
         return RandomUser(name: Name.init(title: "MR", first: "Minhyun", last: "Cho"), email: "simh3077@gmail.com")
     }
 }
