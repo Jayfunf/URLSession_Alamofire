@@ -9,9 +9,10 @@ import SwiftUI
 
 struct SessionView: View {
     @ObservedObject var networking = networkingClass()
+    let url = "https://randomuser.me/api/?results=50&inc=name,email"
     
     init() {
-        networking.urlSessionNetworking()
+        networking.urlSessionNetworking(url: url)
     }
     
     var body: some View {
