@@ -5,7 +5,8 @@ URLSession과 Alamofire을 이용해서 간단한 앱을 구현하고 비교해�
 ![앱 동작](https://user-images.githubusercontent.com/60823527/193018816-691119cf-d561-4dba-8142-4985cc5338f6.gif)
 
 
-[깃허브 주소: URLSession_Alamofire](https://github.com/Jayfunf/URLSession_Alamofire)
+[Velog 주소: URLSession과 Alamofire를 비교해보자. with SwiftUI](https://velog.io/@simh3077/URLSession%EA%B3%BC-Alamofire%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90.-with-SwiftUI)
+
 
 # 🚀 시작하기에 앞서
 ## 💻 Tech Stack
