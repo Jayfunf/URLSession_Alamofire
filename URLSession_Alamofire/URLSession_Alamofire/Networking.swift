@@ -16,7 +16,8 @@ class networkingClass: ObservableObject {
     
     func urlSessionNetworking() {
         guard let sessionUrl = URL(string: url) else { return }
-        let session = URLSession(configuration: .default)
+        //let session = URLSession(configuration: .default)
+        let session = URLSession.shared
         
         var requestURL = URLRequest(url: sessionUrl)
         let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
