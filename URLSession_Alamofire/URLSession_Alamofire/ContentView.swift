@@ -32,7 +32,7 @@ struct ContentView: View {
                     
                 VStack {
                     Button {
-                        network.alamofireNetworking()
+                        print("Alamofire Button Clicked")
                     } label: {
                         NavigationLink("Alamofire"){
                             AlamofireView()
@@ -46,7 +46,7 @@ struct ContentView: View {
                         
                     }
                     Button {
-                        network.urlSessionNetworking()
+                        print("URLSession Button Clicked")
                     } label: {
                         NavigationLink("URLSession"){
                             SessionView()
