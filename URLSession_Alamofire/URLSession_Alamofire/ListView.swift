@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListView: View {
-    @ObservedObject var network = networkingClass()
     var prdData: RandomUser
     
     let gradient: LinearGradient = {
