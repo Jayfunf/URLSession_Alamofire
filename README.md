@@ -2,7 +2,8 @@ URLSession과 Alamofire을 이용해서 간단한 앱을 구현하고 비교해�
 
 # 애플리케이션 미리보기 & 깃허브 주소
 
-![](https://velog.velcdn.com/images/simh3077/post/89e7d777-e159-4989-a168-4cbc95d6ba9e/image.gif)
+![앱 동작](https://user-images.githubusercontent.com/60823527/193018816-691119cf-d561-4dba-8142-4985cc5338f6.gif)
+
 
 [깃허브 주소: URLSession_Alamofire](https://github.com/Jayfunf/URLSession_Alamofire)
 
